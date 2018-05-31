@@ -1,2 +1,5 @@
 # scala-algo-tasks
-My solutions to programming tasks – Kattis / Hackerrank / others
+
+My solutions to programming tasks – Kattis / Hackerrank / others.
+
+Tests included.
