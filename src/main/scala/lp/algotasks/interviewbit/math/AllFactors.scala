@@ -1,4 +1,4 @@
-package lp.algotasks.interviewbit
+package lp.algotasks.interviewbit.math
 
 import scala.collection.mutable.ArrayBuffer
 

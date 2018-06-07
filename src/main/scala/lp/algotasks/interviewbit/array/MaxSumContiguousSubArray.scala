@@ -1,4 +1,4 @@
-package lp.algotasks.interviewbit
+package lp.algotasks.interviewbit.array
 
 /**
   * Max Sum Contiguous Subarray
