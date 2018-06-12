@@ -61,6 +61,8 @@ class LinkedList[T](var head: Node[T]) {
   }
 
   def remove(node: Node[T]): Unit = {
+    if (head == null) return
+
     if (head.value == node.value) {
       head = head.next
     } else {
@@ -77,6 +79,7 @@ class LinkedList[T](var head: Node[T]) {
 
 object Node {
   def apply[T](value: T): Node[T] = new Node(value, null)
+  def apply[T](value: T, next: Node[T]): Node[T] = new Node(value, next)
 }
 
 class Node[T](val value: T, var next: Node[T]) {
