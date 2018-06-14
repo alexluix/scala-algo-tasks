@@ -28,7 +28,7 @@ object BinarySearchTree {
     Node(buildTree(data, start, mid - 1), buildTree(data, mid + 1, end), data(mid))
   }
 
-  def traverse[T](node: Node[T], f: Node[T] => Unit): Unit = {
+  def traverseInStack[T](node: Node[T], f: Node[T] => Unit): Unit = {
     val stack = Stack[Node[T]]()
     stack.push(node)
 
@@ -39,6 +39,12 @@ object BinarySearchTree {
       if (n.right != null) stack.push(n.right)
       if (n.left != null) stack.push(n.left)
     }
+  }
+
+  def traverseInOrder[T](node: Node[T], f: Node[T] => Unit): Unit = {
+    if (node.left != null) traverseInOrder(node.left, f)
+    f(node)
+    if (node.right != null) traverseInOrder(node.right, f)
   }
 
 }

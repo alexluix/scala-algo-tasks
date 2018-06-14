@@ -45,13 +45,23 @@ class BinarySearchTreeSpec extends FlatSpec {
     assert(r1.right.right.value === 9)
   }
 
-  it should "do depth-first search" in {
+  it should "traverse a tree" in {
     val root = subject.build(Array(1, 2, 3, 4, 5, 6, 7, 8, 9))
 
     val buffer = ArrayBuffer[Int]()
-    subject.traverse(root, (node: Node[Int]) => buffer.append(node.value))
+    subject.traverseInOrder(root, (node: Node[Int]) => buffer.append(node.value))
 
-    assert(buffer.toList.mkString(" ") === "5 2 1 3 4 7 6 8 9")
+    assert(buffer.toList.mkString(" ") === "1 2 3 4 5 6 7 8 9")
+  }
+
+  it should "traverse a tree iteratively" in {
+    val largeList = (1 to 1000).toArray
+    val root = subject.build(largeList)
+
+    val buffer = ArrayBuffer[Int]()
+    subject.traverseInStack(root, (node: Node[Int]) => buffer.append(node.value))
+
+    assert(largeList.toSet === buffer.toSet)
   }
 
 }
