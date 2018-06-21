@@ -7,7 +7,7 @@ package lp.algotasks.interviewbit.string
   */
 object PalindromeString {
 
-  def isPalindrome(A: String): Int  = {
+  def isPalindrome(A: String): Int = {
     val chars = A.filter(c => c.isLetter || c.isDigit).map(_.toLower).toCharArray
 
     val length = chars.length
